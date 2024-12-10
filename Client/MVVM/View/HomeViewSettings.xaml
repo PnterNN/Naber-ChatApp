@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="JavaProject___Client.MVVM.View.HomeViewSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JavaProject___Client.MVVM.View"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="625" d:DesignWidth="1200"
+             Background="#2F3136">
+    <Grid>
+        <Border CornerRadius="0,0,10,10" 
+            BorderBrush="#ebedf3"
+            Padding="20">
+            <Border.Background>
+                <ImageBrush ImageSource="/Assets/Loginbackground.png" Stretch="Fill"/>
+            </Border.Background>
+            <Border CornerRadius="10">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Assets/globallayer1.png" Stretch="Fill"/>
+                </Border.Background>
+                <StackPanel>
+                    <GroupBox Header="Devices" Margin="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"> Microphone Device</TextBlock>
+                            <ComboBox SelectedIndex="{Binding MicrophoneDevice}" x:Name="SettingsMicrophone" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="10"  VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Center">Speaker Device</TextBlock>
+                            <ComboBox SelectedIndex="{Binding SpeakerDevice}" x:Name="SettingsSpeaker" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Center" />
+                            <mah:RangeSlider Grid.Column="0" Grid.Row="2" Height="38" Margin="50,0,50,0" VerticalAlignment="Center"/>
+                        </Grid>
+                    </GroupBox>
+                    <Button x:Name="Navigatetologin" 
+                        Height="40"
+                        Width="200"
+                        Content="Geri Dön"
+                        Command="{Binding NavigateToBack}"
+                
+                        Margin="0,2,0,0"/>
+                </StackPanel>
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>
